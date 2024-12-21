@@ -135,3 +135,110 @@ void converterVolume()
          resultado,
          unidades[unidadeDestino]);
 }
+
+void menu(){
+    printf("\n\n****************************************************************************************\n");
+    printf("\t\t\tSuper conversor de unidades\n");
+    printf("****************************************************************************************\n\n");
+    printf("\t1 - Conversao de unidades de comprimento.\n");
+    printf("\t2 - Conversao de unidades de massa.\n");
+    printf("\t3 - Conversao de unidades de volume.\n");
+    printf("\t4 - Conversao de unidades de temperatura.\n");
+    printf("\t5 - Conversao de unidades de velocidade.\n");
+    printf("\t6 - Conversao de unidades de energia.\n");
+    printf("\t7 - Conversao de unidades de tempo.\n");
+    printf("\nEscolha uma das opcoes acima:");
+}
+
+void converterMassa(){
+  float valor, valorOriginal;
+  int origem, destino;
+  const char *unidades[] = {"", "quilograma", "grama", "tonelada"};
+  
+  
+  printf("Escolha a unidade de origem:\n");
+  printf("1 - Quilograma\n");
+  printf("2 - Grama\n");
+  printf("3 - Tonelada\n");
+  printf("Sua escolha: ");
+  scanf("%d", &origem);
+
+  printf("Digite o valor que deseja converter: ");
+  scanf("%f", &valor);
+  valorOriginal=valor;
+  
+  printf("Escolha a unidade de destino:\n");
+  printf("1 - Quilograma\n");
+  printf("2 - Grama\n");
+  printf("3 - Tonelada\n");
+  printf("Sua escolha: ");
+  scanf("%d", &destino);
+
+  if (origem == 1) {
+
+    switch (destino)
+    {
+    case 1:
+      
+      break;
+
+    case 2:
+      valor*=1000;
+      break;
+
+    case 3:
+      valor/=1000;
+      break;
+    
+    default:
+      break;
+    }
+  }
+    // Se a unidade de origem for Grama (2)
+    if (origem == 2) {
+      switch (destino)
+      {
+      case 1:
+        valor/=1000;
+        break;
+
+      case 2:
+        
+        break;
+
+      case 3:
+        valor*=1000000;;
+        break;
+      
+      default:
+        break;
+      }
+    }
+    
+    // Se a unidade de origem for Tonelada (3)
+    if (origem == 3) {
+    
+    switch (destino)
+    {
+      case 1:
+        valor*=1000;
+        break;
+
+      case 2:
+        valor*=1000000;
+        break;
+
+      case 3:
+        
+        break;
+      
+      default:
+        break;
+   }
+  }
+  printf("%g %s equivale a %g %s\n",
+         valorOriginal,
+         unidades[origem],
+         valor,
+         unidades[destino]);
+}
