@@ -33,11 +33,11 @@ Este programa em C permite converter valores entre segundos, minutos e horas. El
 
 1. Compile o programa utilizando um compilador C, como `gcc`:  
    ```bash
-   gcc -o conversao_tempo conversao_tempo.c
+   gcc -o tarefa3 main.c funcoes.c
    ```
 2. Execute o programa:  
    ```bash
-   ./conversao_tempo
+   ./tarefa3
    ```
 3. Escolha uma das opções fornecidas no menu:
    - **1:** Inserir segundos.
