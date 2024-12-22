@@ -19,7 +19,24 @@ Exemplo de funcionamento:
 ---
 
 
-# 8. Conversão de Unidades de Tempo
+
+
+
+## 4 - Função de Conversão de Unidade de Temperatura
+
+A função de conversão de unidades de temperatura permite que o usuário converta valores entre diferentes escalas de temperatura: Celsius, Fahrenheit e Kelvin. O processo funciona de maneira simples e clara:
+
+Seleção da conversão desejada: O usuário escolhe uma das opções no menu, como Celsius para Fahrenheit, Celsius para Kelvin, etc.
+Entrada de valor: O usuário insere a temperatura que deseja converter.
+Cálculo da conversão: O programa realiza a conversão com base nas fórmulas específicas para cada escala.
+Exibição do resultado: O resultado da conversão é exibido, mostrando a temperatura na escala desejada.
+Exemplo de funcionamento:
+Se o usuário selecionar "Celsius para Fahrenheit" e inserir o valor de 25, o programa calculará que 25°C equivale a 77°F.
+
+
+
+
+## 8. Conversão de Unidades de Tempo
 
 Este programa em C permite converter valores entre segundos, minutos e horas. Ele solicita ao usuário uma opção de entrada e realiza os cálculos de conversão com base na unidade escolhida.
 
@@ -71,4 +88,6 @@ Tempo em horas: 1
 - As conversões utilizam fatores simples:
   - 1 minuto = 60 segundos.
   - 1 hora = 3600 segundos ou 60 minutos.
+
+
 
