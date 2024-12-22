@@ -15,4 +15,13 @@ void converterVolume();
 
 void converterMassa();
 
+// 5 - Funções de Conversão de Unidade de Velocidade
+float kmh_ms(float v);
+float kmh_mph(float v);
+float ms_kmh(float v);
+float ms_mph(float v);
+float mph_kmh(float v);
+float mph_ms(float v);
+void convertvelocidade();
+
 #endif
