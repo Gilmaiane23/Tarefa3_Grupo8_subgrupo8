@@ -30,7 +30,7 @@ int main()
       break;
 
     case 5: //Velocidade
-      
+      convertvelocidade();
       break;
 
     case 6: //Energia
@@ -38,7 +38,7 @@ int main()
       break;
 
     case 7: //Tempo
-      unidade_tempo();
+      
       break;
 
     case 0:
