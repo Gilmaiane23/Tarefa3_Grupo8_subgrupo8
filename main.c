@@ -38,7 +38,7 @@ int main()
       break;
 
     case 7: //Tempo
-      
+      unidade_tempo();
       break;
 
     case 0:
