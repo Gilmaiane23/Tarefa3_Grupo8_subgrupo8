@@ -1,8 +1,10 @@
 #ifndef FUNCOES_H
 #define FUNCOES_H
 
-void menu();
 
+void menu(); // Exibe o menu principal do programa
+
+// Retorna a unidade de tempo correspondente (segundos, minutos ou horas)
 int segundo();
 int minuto();
 int hora();
@@ -13,6 +15,7 @@ double obterFatorParaLitros(int unidade);
 int exibirSelecaoUnidade(const char *titulo);
 void converterVolume();
 
+// Funções de conversão de unidade de massa
 void converterMassa();
 
 // 5 - Funções de Conversão de Unidade de Velocidade
