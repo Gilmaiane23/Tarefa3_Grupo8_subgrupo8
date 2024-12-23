@@ -17,6 +17,7 @@ void converterVolume();
 
 // Funções de conversão de unidade de massa
 void converterMassa();
+void converterEnergia();
 
 // 5 - Funções de Conversão de Unidade de Velocidade
 float kmh_ms(float v);

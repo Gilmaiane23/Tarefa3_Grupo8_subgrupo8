@@ -19,7 +19,41 @@ Exemplo de funcionamento:
 ---
 
 
-# 8. Conversão de Unidades de Tempo
+
+
+
+## 4 - Função de Conversão de Unidade de Temperatura
+
+A função de conversão de unidades de temperatura permite que o usuário converta valores entre diferentes escalas de temperatura: Celsius, Fahrenheit e Kelvin. O processo funciona de maneira simples e clara:
+
+1. Seleção da conversão desejada: O usuário escolhe uma das opções no menu, como Celsius para Fahrenheit, Celsius para Kelvin, etc.
+2. Entrada de valor: O usuário insere a temperatura que deseja converter.
+3. Cálculo da conversão: O programa realiza a conversão com base nas fórmulas específicas para cada escala.
+4. Exibição do resultado: O resultado da conversão é exibido, mostrando a temperatura na escala desejada.
+
+Exemplo de funcionamento:
+Se o usuário selecionar "Celsius para Fahrenheit" e inserir o valor de 25, o programa calculará que 25°C equivale a 77°F.
+
+
+## 6 - Função de Conversão de Unidade de Energia
+
+A função de conversão de unidades de volume permite que o usuário converta valores entre diferentes unidades de energia, como watts, kilowatts e cavalos-vapor (hp ou cv). O processo é simples e envolve as seguintes etapas:
+
+1. **Entrada de valor**: O usuário insere o valor a ser convertido.
+2. **Seleção da unidade de origem**: O usuário escolhe a unidade de origem, como watts, kilowatts ou cavalos-vapor (hp ou cv).
+2. **Seleção da unidade de destino**: O usuário escolhe a unidade para a qual deseja converter o valor fornecido. Pode ser também watts, kilowatts ou cavalos-vapor (hp ou cv).
+4. **Cálculo da conversão**: O valor informado é convertido com base nos fatores de conversão predefinidos entre as unidades.
+5. **Exibição do resultado**: O resultado da conversão é exibido, mostrando o valor convertido entre as unidades selecionadas.
+
+Exemplo de funcionamento:
+
+- Se o usuário selecionar "watts" como unidade de origem e "kilowatts" como unidade de destino, e inserir o valor de 1000, o programa calculará que 1000 watts equivale a 1.0 kilowatt.
+
+---
+
+
+
+## 8. Conversão de Unidades de Tempo
 
 Este programa em C permite converter valores entre segundos, minutos e horas. Ele solicita ao usuário uma opção de entrada e realiza os cálculos de conversão com base na unidade escolhida.
 
@@ -71,4 +105,6 @@ Tempo em horas: 1
 - As conversões utilizam fatores simples:
   - 1 minuto = 60 segundos.
   - 1 hora = 3600 segundos ou 60 minutos.
+
+
 

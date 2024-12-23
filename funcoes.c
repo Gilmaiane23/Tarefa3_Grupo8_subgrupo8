@@ -241,6 +241,7 @@ void menu(){
     printf("\n\n****************************************************************************************\n");
     printf("\t\t\tSuper conversor de unidades\n");
     printf("****************************************************************************************\n\n");
+    printf("\t0 - Para sair do programa.\n");
     printf("\t1 - Conversao de unidades de comprimento.\n");
     printf("\t2 - Conversao de unidades de massa.\n");
     printf("\t3 - Conversao de unidades de volume.\n");
@@ -248,7 +249,7 @@ void menu(){
     printf("\t5 - Conversao de unidades de velocidade.\n");
     printf("\t6 - Conversao de unidades de energia.\n");
     printf("\t7 - Conversao de unidades de tempo.\n");
-    printf("\nEscolha uma das opcoes acima:");
+    printf("\nEscolha uma das opcoes acima: ");
 }
 
 void converterMassa(){
@@ -342,4 +343,81 @@ void converterMassa(){
          unidades[origem],
          valor,
          unidades[destino]);
+}
+
+void convertEnergy(double value, int fromUnit, int toUnit) {
+    double result;
+
+    // Conversões baseadas nos fatores conhecidos
+    switch (fromUnit) {
+        // De watts (W)
+        case 1: 
+            if (toUnit == 2) {
+                // Watts para kilowatts
+                result = value / 1000.0; 
+            } else if (toUnit == 3) {
+                // Watts para cavalos-vapor
+                result = value / 735.499; 
+            } else {
+                // Mesma unidade
+                result = value; 
+            }
+            break;
+
+        // De kilowatts (kW)
+        case 2: 
+            if (toUnit == 1) {
+                // Kilowatts para watts
+                result = value * 1000.0; 
+            } else if (toUnit == 3) {
+                // Kilowatts para cavalos-vapor
+                result = (value * 1000.0) / 735.499;
+            } else {
+                // Mesma unidade
+                result = value; 
+            }
+            break;
+
+        // De cavalos-vapor (cv)
+        case 3: 
+            if (toUnit == 1) {
+                // Cavalos-vapor para watts
+                result = value * 735.499; 
+            } else if (toUnit == 2) {
+                // Cavalos-vapor para kilowatts
+                result = (value * 735.499) / 1000.0; 
+            } else {
+                // Mesma unidade
+                result = value;
+            }
+            break;
+
+        default:
+            printf("Unidade de origem inválida.\n");
+            return;
+    }
+
+    // Exibe o resultado
+    printf("Resultado: %.3f\n", result);
+}
+
+void converterEnergia() {
+    double value;
+    int fromUnit, toUnit;
+
+    printf("Conversor de Unidades de Energia\n");
+    printf("1. Watts (W)\n");
+    printf("2. Kilowatts (kW)\n");
+    printf("3. Cavalos-vapor (cv)\n");
+
+    printf("\nDigite o valor a ser convertido: ");
+    scanf("%lf", &value);
+
+    printf("Escolha a unidade de origem (1-3): ");
+    scanf("%d", &fromUnit);
+
+    printf("Escolha a unidade de destino (1-3): ");
+    scanf("%d", &toUnit);
+
+    convertEnergy(value, fromUnit, toUnit);
 }
