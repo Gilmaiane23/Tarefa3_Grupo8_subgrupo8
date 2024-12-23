@@ -14,50 +14,47 @@ int main()
     system("clear || cls");
     switch (op)
     {
-    case 1: //Comprimento
+      case 1: //Comprimento
+        
+        break;
+
+      case 2: //Massa
+        converterMassa();
+        break;
       
-      break;
+      case 3: //Volume
+        converterVolume();
 
-    case 2: //Massa
-      converterMassa();
-      break;
-    
-    case 3: //Volume
-      converterVolume();
+        break;
 
-      break;
+      case 4: //Temperatura
+        
+        break;
 
-    case 4: //Temperatura
+      case 5: //Velocidade
+        
+        break;
+
+      case 6: //Energia
+        converterEnergia();
+        break;
+
+      case 7: //Tempo
+        unidade_tempo();
+        break;
+
+      case 0:
+        printf("\nObrigado por utilizar o programa :)\nPressione qualquer tecla para sair: \n");
+        scanf("%*c");
+        scanf("%*c");
+        break;
       
-      break;
-
-    case 5: //Velocidade
-      
-      break;
-
-    case 6: //Energia
-      converterEnergia();
-      break;
-
-    case 7: //Tempo
-      unidade_tempo();
-      break;
-
-    case 0:
-      printf("\nObrigado por utilizar o programa :)\n Pressione qualquer tecla para sair:");
-      scanf("%*c");
-      scanf("%*c");
-      break;
-    
-    default:
-      printf("\nEssa opcao nao existe.\n Pressione qualquer tecla para continuar: ");
-      scanf("%*c");
-      scanf("%*c");
-      break;
+      default:
+        printf("\nEssa opcao nao existe.\nPressione qualquer tecla para continuar: \n");
+        scanf("%*c");
+        scanf("%*c");
+        break;
     }
-    printf("\nPressione qualquer tecla para continuar: ");
-    scanf("%*c");
-    scanf("%*c");
     system("clear || cls");
   }
   

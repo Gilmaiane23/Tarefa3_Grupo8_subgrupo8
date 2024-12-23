@@ -140,6 +140,7 @@ void menu(){
     printf("\n\n****************************************************************************************\n");
     printf("\t\t\tSuper conversor de unidades\n");
     printf("****************************************************************************************\n\n");
+    printf("\t0 - Para sair do programa.\n");
     printf("\t1 - Conversao de unidades de comprimento.\n");
     printf("\t2 - Conversao de unidades de massa.\n");
     printf("\t3 - Conversao de unidades de volume.\n");
@@ -147,7 +148,7 @@ void menu(){
     printf("\t5 - Conversao de unidades de velocidade.\n");
     printf("\t6 - Conversao de unidades de energia.\n");
     printf("\t7 - Conversao de unidades de tempo.\n");
-    printf("\nEscolha uma das opcoes acima:");
+    printf("\nEscolha uma das opcoes acima: ");
 }
 
 void converterMassa(){
