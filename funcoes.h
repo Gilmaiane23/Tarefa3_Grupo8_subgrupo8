@@ -14,5 +14,6 @@ int exibirSelecaoUnidade(const char *titulo);
 void converterVolume();
 
 void converterMassa();
+void converterEnergia();
 
 #endif
