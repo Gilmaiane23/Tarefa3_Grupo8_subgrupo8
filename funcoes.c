@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "funcoes.h"
 
 int segundo()
@@ -136,6 +137,106 @@ void converterVolume()
          unidades[unidadeDestino]);
 }
 
+
+// 5 - Funções de Conversão de Unidade de Velocidade
+
+float kmh_ms(float v){
+  return v / 3.6;
+}
+
+float kmh_mph(float v){
+  return v * 0.62;
+}
+
+float ms_kmh(float v){
+  return v * 3.6;
+}
+
+float ms_mph(float v){
+  return v * 2.24;
+}
+
+float mph_kmh(float v){
+  return v * 1.61;
+}
+
+float mph_ms(float v){
+  return v * 0.45;
+}
+
+// Função principal com menu de seleção de conversão
+void convertvelocidade(){
+  int op;
+  float valor, conversao;
+
+  /* Menu com opções de conversões, cada uma associada a um número.
+  Caso o usuário digite -1, o programa retorna ao menu principal*/
+  do{
+    printf("Conversões:\n");
+    printf("1- km/h -> m/s\n");
+    printf("2- km/h -> mph\n");
+    printf("3- m/s -> km/h\n");
+    printf("4- m/s -> mph\n");
+    printf("5- mph -> km/h\n");
+    printf("6- mph -> m/s\n");
+    printf("Selecione a conversão desejada ou digite -1 para retornar: ");
+    scanf("%d", &op);
+
+    // Se a opção for diferente de -1, o programa segue solicitando o valor que se deseja converter
+    if (op != -1){
+      printf("Digite o valor a ser convertido: ");
+      scanf("%f", &valor);
+      printf("\n");
+
+      printf("Resultado: \n");
+
+      // Switch case que atualiza a variável "conversao" ao retorno da respectiva função de conversão
+      switch(op){
+        case 1:
+          conversao = kmh_ms(valor);
+          printf("%.2f km/h = %.2f m/s\n", valor, conversao);
+          break;
+        
+        case 2:
+          conversao = kmh_mph(valor);
+          printf("%.2f km/h = %.2f mph\n", valor, conversao);
+          break;
+
+        case 3:
+          conversao = ms_kmh(valor);
+          printf("%.2f m/s = %.2f km/h\n", valor, conversao);
+          break;
+
+        case 4:
+          conversao = ms_mph(valor);
+          printf("%.2f m/s = %.2f mph\n", valor, conversao);
+          break;
+
+        case 5:
+          conversao = mph_kmh(valor);
+          printf("%.2f mph = %.2f km/h\n", valor, conversao);
+          break;
+
+        case 6:
+          conversao = mph_ms(valor);
+          printf("%.2f mph = %.2f m/s\n", valor, conversao);
+          break;
+        
+        default:
+          printf("Opção inválida. Tente outra.");
+          break;
+      }
+    }
+    
+    // Aciona os comandos do sistema para pausar a tela no resultado, e apagar as informações do terminal
+    system("pause");
+    printf("Pressione qualquer tecla para continuar...");
+    system("clear || cls");
+  }while(op != -1);
+};
+
+
+// Função do Menu
 void menu(){
     printf("\n\n****************************************************************************************\n");
     printf("\t\t\tSuper conversor de unidades\n");
