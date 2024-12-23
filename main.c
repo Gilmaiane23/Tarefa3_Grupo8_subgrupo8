@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "funcoes.h"
+
+// As funções não estavam exportando corretamente com funcoes.h
+#include "funcoes.c"
 
 int main()
 {
@@ -34,7 +36,7 @@ int main()
       break;
 
     case 6: //Energia
-      
+      converterEnergia();
       break;
 
     case 7: //Tempo
