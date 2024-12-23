@@ -24,16 +24,16 @@ int main()
       
       case 3: //Volume
         converterVolume();
+
         break;
 
-       case 4: //Temperatura
+      case 4: //Temperatura
         
         break;
 
-
-     case 5: //Velocidade
-      convertvelocidade();
-      break;
+      case 5: //Velocidade
+        
+        break;
 
       case 6: //Energia
         converterEnergia();
