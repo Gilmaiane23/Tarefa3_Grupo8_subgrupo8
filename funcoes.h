@@ -28,4 +28,11 @@ float mph_kmh(float v);
 float mph_ms(float v);
 void convertvelocidade();
 
+// 7 - funções para a conversão da área.
+int mostrarEscolhaDaUnidade(const char *descricao);
+double fatorconversao(int unidade);
+void converterArea();
+// chamada da função no main
+void converterArea();
+
 #endif
