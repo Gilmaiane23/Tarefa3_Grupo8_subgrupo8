@@ -4,8 +4,7 @@
 
 ESTE PROGRAMA É SUPER CONVERSOR DE  UNIDADES. PARA EXECUTÁ-LO, OU SABER MAIS LEIA A DESCRIÇÃO ABAIXO 👇
 
-👉 PARA EXECUTÁ-LO
-Siga os passos abaixo para compilar e executar o programa:
+PARA EXECUTÁ-LO: 👇
 
 👉1. **Compile o programa** com o comando:
 
