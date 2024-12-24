@@ -12,11 +12,12 @@ Siga os passos abaixo para compilar e executar o programa:
    ```bash
    gcc -o tarefa3 main.c funcoes.c funcoes.h
    
-👉2.Execute o programa com o comando:
+👉2.**Execute o programa** com o comando:
 
   ```bash
   ./tarefa3
 
+****
 
 FUNCIONALIDADES
 📌1. Conversão de Unidades de Comprimento
