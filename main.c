@@ -6,65 +6,57 @@
 
 int main()
 {
-  int op = -1;
-  while (op != 0)
+  int op=-1;
+  while (op!=0)
   {
     menu();
-    scanf("%d", &op);
+    scanf("%d",&op);
     system("clear || cls");
     switch (op)
     {
-    case 1: // Comprimento
+      case 1: //Comprimento
+        
+        break;
 
-      break;
+      case 2: //Massa
+        converterMassa();
+        break;
+      
+      case 3: //Volume
+        converterVolume();
 
-    case 2: // Massa
-      converterMassa();
-      getchar(); 
-      getchar(); 
-      break;
+        break;
 
-    case 3: // Volume
-      converterVolume();
-      getchar(); 
-      getchar(); 
+      case 4: //Temperatura
+        
+        break;
 
-      break;
+      case 5: //Velocidade
+        
+        break;
 
-    case 4: // Temperatura
+      case 6: //Energia
+        converterEnergia();
+        break;
 
-      break;
+      case 7: //Tempo
+        unidade_tempo();
+        break;
 
-    case 5: // Velocidade
-
-      break;
-
-    case 6: // Energia
-      converterEnergia();
-      getchar(); 
-      getchar(); 
-      break;
-
-    case 7: // Tempo
-      unidade_tempo();
-      getchar(); 
-      getchar(); 
-      break;
-
-    case 0:
-      printf("\nObrigado por utilizar o programa :)\nPressione qualquer tecla para sair: \n");
-      scanf("%*c");
-      scanf("%*c");
-      break;
-
-    default:
-      printf("\nEssa opcao nao existe.\nPressione qualquer tecla para continuar: \n");
-      scanf("%*c");
-      scanf("%*c");
-      break;
+      case 0:
+        printf("\nObrigado por utilizar o programa :)\nPressione qualquer tecla para sair: \n");
+        scanf("%*c");
+        scanf("%*c");
+        break;
+      
+      default:
+        printf("\nEssa opcao nao existe.\nPressione qualquer tecla para continuar: \n");
+        scanf("%*c");
+        scanf("%*c");
+        break;
     }
     system("clear || cls");
   }
-
+  
   return 0;
 }
