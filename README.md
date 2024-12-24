@@ -11,11 +11,11 @@ Siga os passos abaixo para compilar e executar o programa:
 
    ```bash
    gcc -o tarefa3 main.c funcoes.c funcoes.h
-   
+
 👉2.**Execute o programa** com o comando:
 
-  ```bash
-  ./tarefa3
+   ```bash
+   ./tarefa3
 
 ****
 
