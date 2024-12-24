@@ -1,6 +1,106 @@
 #include <stdio.h>
 #include "funcoes.h"
 
+#include <locale.h>
+
+
+//MENU//
+void menu(){
+    printf("\n\n****************************************************************************************\n");
+    printf("\t\t\tSuper conversor de unidades\n");
+    printf("****************************************************************************************\n\n");
+    printf("\t0 - Para sair do programa.\n");
+    printf("\t1 - Conversao de unidades de comprimento.\n");
+    printf("\t2 - Conversao de unidades de massa.\n");
+    printf("\t3 - Conversao de unidades de volume.\n");
+    printf("\t4 - Conversao de unidades de temperatura.\n");
+    printf("\t5 - Conversao de unidades de velocidade.\n");
+    printf("\t6 - Conversao de unidades de energia.\n");
+    printf("\t7 - Conversao de unidades de tempo.\n");
+    printf("\nEscolha uma das opcoes acima: ");
+}
+//
+
+//**CONVERSÕES**/
+
+//1-Conversão comprimento Metro, cm, mm
+void converterComprimento() {
+    int opcao, continuar;
+    float comprimento, resultado;
+
+    while (1) {
+        printf("Escolha a conversão desejada:\n");
+        printf("1 - Metro(s) para Centímetro(s)\n");
+        printf("2 - Metro(s) para Milímetro(s)\n");
+        printf("3 - Centímetro(s) para Milímetro(s)\n");
+        printf("4 - Centímetro(s) para Metro(s)\n");
+        printf("5 - Milímetro(s) para Metro(s)\n");
+        printf("6 - Milímetro(s) para Centímetro(s)\n");
+        printf("Digite a opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Digite o comprimento em Metro(s): ");
+                scanf("%f", &comprimento);
+                resultado = comprimento * 100;
+                printf("%.2f Metro(s) equivalem a %.2f Centímetro(s).\n", comprimento, resultado);
+                break;
+
+            case 2:
+                printf("Digite o comprimento em Metro(s): ");
+                scanf("%f", &comprimento);
+                resultado = comprimento * 1000;
+                printf("%.2f Metro(s) equivalem a %.2f Milímetro(s).\n", comprimento, resultado);
+                break;
+
+            case 3:
+                printf("Digite o comprimento em Centímetro(s): ");
+                scanf("%f", &comprimento);
+                resultado = comprimento * 10;
+                printf("%.2f Centímetro(s) equivalem a %.2f Milímetro(s).\n", comprimento, resultado);
+                break;
+
+            case 4:
+                printf("Digite o comprimento em Centímetro(s): ");
+                scanf("%f", &comprimento);
+                resultado = comprimento / 100;
+                printf("%.2f Centímetro(s) equivalem a %.2f Metro(s).\n", comprimento, resultado);
+                break;
+
+            case 5:
+                printf("Digite o comprimento em Milímetro(s): ");
+                scanf("%f", &comprimento);
+                resultado = comprimento / 1000;
+                printf("%.2f Milímetro(s) equivalem a %.2f Metro(s).\n", comprimento, resultado);
+                break;
+
+            case 6:
+                printf("Digite o comprimento em Milímetro(s): ");
+                scanf("%f", &comprimento);
+                resultado = comprimento / 10;
+                printf("%.2f Milímetro(s) equivalem a %.2f Centímetro(s).\n", comprimento, resultado);
+                break;
+
+            default:
+                printf("Opção inválida!\n");
+                continue;
+        }
+
+        printf("\nDeseja:\n");
+        printf("1 - Voltar para o menu\n");
+        printf("2 - Sair\n");
+        printf("Digite a opção: ");
+        scanf("%d", &continuar);
+
+        if (continuar == 2) {
+            printf("Saindo...\n");
+            break;
+        }
+    }
+}
+
+//2- Conversão tempo, segundo, minuto, hora
 int segundo()
 {
     int seg;
@@ -74,7 +174,7 @@ void unidade_tempo()
     }
 }
 
-// 1 - Função de Conversão de Unidade de Volume
+// 3 - Função de Conversão de Volume
 double obterFatorParaLitros(int unidade)
 {
   switch (unidade)
@@ -136,21 +236,90 @@ void converterVolume()
          unidades[unidadeDestino]);
 }
 
-void menu(){
-    printf("\n\n****************************************************************************************\n");
-    printf("\t\t\tSuper conversor de unidades\n");
-    printf("****************************************************************************************\n\n");
-    printf("\t0 - Para sair do programa.\n");
-    printf("\t1 - Conversao de unidades de comprimento.\n");
-    printf("\t2 - Conversao de unidades de massa.\n");
-    printf("\t3 - Conversao de unidades de volume.\n");
-    printf("\t4 - Conversao de unidades de temperatura.\n");
-    printf("\t5 - Conversao de unidades de velocidade.\n");
-    printf("\t6 - Conversao de unidades de energia.\n");
-    printf("\t7 - Conversao de unidades de tempo.\n");
-    printf("\nEscolha uma das opcoes acima: ");
+//4- Função de conversão de temperatura
+void converterTemperatura(){
+int opcao, continuar;
+    float temperatura, resultado;
+    while (1) {
+    printf("Escolha a conversão desejada:\n");
+    printf("1 - Celsius para Fahrenheit\n");
+    printf("2 - Celsius para Kelvin\n");
+    printf("3 - Fahrenheit para Celsius\n");
+    printf("4 - Fahrenheit para Kelvin\n");
+    printf("5 - Kelvin para Celsius\n");
+    printf("6 - Kelvin para Fahrenheit\n");
+    printf("Digite a opção: ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            // Conversão de Celsius para Fahrenheit
+            printf("Digite a temperatura em Celsius:");
+            scanf("%f", &temperatura);
+            resultado = (temperatura * 9/5) + 32;
+            printf("%.2f Celsius equivale a %.2f Fahrenheit.\n", temperatura, resultado);
+            break;
+        
+        case 2:
+            // Conversão de Celsius para kelvin
+            printf("Digite a temperatura em Celsius:");
+            scanf("%f", &temperatura);
+            resultado = (temperatura + 273);
+            printf("%.2f Celsius equivale a %.2f Kelvin.", temperatura, resultado);
+            break;
+         case 3:
+            // Conversão de Fahrenheit para Celsius
+            printf("Digite a temperatura em Fahrenheit:");
+            scanf("%f", &temperatura);
+            resultado = (temperatura - 32) * 5/9;
+            printf("%.2f Fahrenheit equivale a %.2f Celsius.", temperatura, resultado);
+            break;
+        
+         case 4:
+            // Conversão de Fahrenheit para Kelvin
+            printf("Digite a temperatura em Fahrenheit:");
+            scanf("%f", &temperatura);
+            resultado = (temperatura - 32) * (5/9) + 273;
+            printf("%.2f Fahrenheit equivale a %.2f Kelvin.", temperatura, resultado);
+            break;
+
+         case 5:
+            // Conversão de Kelvin para Celsius
+            printf("Digite a temperatura em Kelvin:");
+            scanf("%f", &temperatura);
+            resultado = (temperatura - 273);
+            printf("%.2f Kelvin equivale a %.2f Celsius.\n", temperatura, resultado);
+            break;
+
+         case 6:
+            // Conversão de Kelvin para Fahrenheit
+            printf("Digite a temperatura em Kelvin:");
+            scanf("%f", &temperatura);
+            resultado = (temperatura - 32) * 5/9;
+            printf("%.2f Kelvin equivale a %.2f Fahrenheit.\n", temperatura, resultado);
+            break;
+            
+    
+        default:
+            printf("Opção inválida!\n");
+            continue;
+    }
+    printf("\nDeseja:\n");
+    printf("1 - Voltar para o menu\n");
+    printf("2 - Sair\n");
+    printf("Digite a opção: ");
+    scanf("%d", &continuar);
+
+        if (continuar == 2) {
+            printf("Saindo...\n");
+            break;
+        }
+    }
+
+   //return 0;
 }
 
+//5  - Função de conversão de Massa, kg, tonelada...
 void converterMassa(){
   float valor, valorOriginal;
   int origem, destino;
@@ -243,6 +412,145 @@ void converterMassa(){
          valor,
          unidades[destino]);
 }
+
+// 6 - Funções de Conversão de Unidade de Velocidade
+float kmh_ms(float v){
+  return v / 3.6;
+}
+float kmh_mph(float v){
+  return v * 0.62;
+}
+float ms_kmh(float v){
+  return v * 3.6;
+}
+float ms_mph(float v){
+  return v * 2.24;
+}
+float mph_kmh(float v){
+  return v * 1.61;
+}
+float mph_ms(float v){
+  return v * 0.45;
+}
+// Função principal com menu de seleção de conversão
+void convertVelocidade(){
+  int op;
+  float valor, conversao;
+  /* Menu com opções de conversões, cada uma associada a um número.
+  Caso o usuário digite -1, o programa retorna ao menu principal*/
+  do{
+    printf("Conversões:\n");
+    printf("1- km/h -> m/s\n");
+    printf("2- km/h -> mph\n");
+    printf("3- m/s -> km/h\n");
+    printf("4- m/s -> mph\n");
+    printf("5- mph -> km/h\n");
+    printf("6- mph -> m/s\n");
+    printf("Selecione a conversão desejada ou digite -1 para retornar: ");
+    scanf("%d", &op);
+    // Se a opção for diferente de -1, o programa segue solicitando o valor que se deseja converter
+    if (op != -1){
+      printf("Digite o valor a ser convertido: ");
+      scanf("%f", &valor);
+      printf("\n");
+      printf("Resultado: \n");
+      // Switch case que atualiza a variável "conversao" ao retorno da respectiva função de conversão
+      switch(op){
+        case 1:
+          conversao = kmh_ms(valor);
+          printf("%.2f km/h = %.2f m/s\n", valor, conversao);
+          break;
+        
+        case 2:
+          conversao = kmh_mph(valor);
+          printf("%.2f km/h = %.2f mph\n", valor, conversao);
+          break;
+        case 3:
+          conversao = ms_kmh(valor);
+          printf("%.2f m/s = %.2f km/h\n", valor, conversao);
+          break;
+        case 4:
+          conversao = ms_mph(valor);
+          printf("%.2f m/s = %.2f mph\n", valor, conversao);
+          break;
+        case 5:
+          conversao = mph_kmh(valor);
+          printf("%.2f mph = %.2f km/h\n", valor, conversao);
+          break;
+        case 6:
+          conversao = mph_ms(valor);
+          printf("%.2f mph = %.2f m/s\n", valor, conversao);
+          break;
+        
+        default:
+          printf("Opção inválida. Tente outra.");
+          break;
+      }
+    }
+    
+    // Aciona os comandos do sistema para pausar a tela no resultado, e apagar as informações do terminal
+    //system("pause");
+    printf("Pressione qualquer tecla para continuar...");
+   // system("clear || cls");
+  }while(op != -1);
+};
+
+// 7- Função de Conversão de Área
+double fatorconversao(int unidade) //obtem o fator razao para o calculo final
+{
+    switch (unidade)
+    {
+    case 1:
+        return 1.0; // metrosquadrados
+    case 2:
+        return 1.0 / 10000.0; // 1 m² = 10000 cm²
+    default:
+        return -1; // Unidade inválida
+    }
+}
+
+int mostrarEscolhaDaUnidade(const char *descricao) // mostra o menu para a escolha da medida a ser convertida
+{
+    int escolha;
+    printf("\nSelecione a unidade de %s:\n\n", descricao);
+    printf("1 - Metros Quadrados\n");
+    printf("2 - Centimetros Quadrados\n\n");
+    printf("Digite o indice selecionado: ");
+    scanf("%d", &escolha);
+    return escolha;
+}
+
+void converterArea() // função geral que e chamada no main
+{
+    int unidadeOrigem, unidadeDestino;
+    double valor, fatorOrigem, fatorDestino, resultado;
+    const char *unidades[] = {"", "metros quadrados", "centimetros quadrados"};
+
+    unidadeOrigem = mostrarEscolhaDaUnidade("origem");
+    fatorOrigem = fatorconversao(unidadeOrigem);
+    if (fatorOrigem == -1) //verificacao menu origem
+    {
+        printf("Unidade de origem invalida.\n");
+        return;
+    }
+
+    unidadeDestino = mostrarEscolhaDaUnidade("destino");
+    fatorDestino = fatorconversao(unidadeDestino);
+    if (fatorDestino == -1) //verificacao menu destino
+    {
+        printf("Unidade de destino invalida.\n");
+        return;
+    }
+
+    printf("\nDigite o valor a ser convertido: "); //recebe o valor a ser calculado
+    scanf("%lf", &valor);
+
+    resultado = valor * fatorOrigem / fatorDestino; //calculo do valor
+
+    printf("\n%g %s é igual a %g %s\n", valor, unidades[unidadeOrigem], resultado, unidades[unidadeDestino]);
+}
+
+// 8 - Função de Conversão de Energia, W, Kw, cv
 
 void convertEnergy(double value, int fromUnit, int toUnit) {
     double result;
