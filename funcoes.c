@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include "funcoes.h"
+#include <stdlib.h>
+
 
 #include <locale.h>
-
 
 //MENU//
 void menu(){
@@ -16,7 +17,8 @@ void menu(){
     printf("\t4 - Conversao de unidades de temperatura.\n");
     printf("\t5 - Conversao de unidades de velocidade.\n");
     printf("\t6 - Conversao de unidades de energia.\n");
-    printf("\t7 - Conversao de unidades de tempo.\n");
+    printf("\t7 - Conversao de unidades de area.\n");
+    printf("\t8 - Conversao de unidades de tempo.\n");
     printf("\nEscolha uma das opcoes acima: ");
 }
 //
@@ -149,6 +151,7 @@ void unidade_tempo()
         printf("Tempo em segundos: %d\n", seg);
         printf("Tempo em minutos: %d\n", minuto);
         printf("Tempo em horas: %.d\n", hora);
+        system("pause");
     }
     else if (numero == 2)
     {
@@ -160,6 +163,7 @@ void unidade_tempo()
         printf("Tempo em segundos: %d\n", segundo);
         printf("Tempo em minutos: %d\n", min);
         printf("Tempo em horas: %.d\n", hora);
+        system("pause"); // Pausa a execução até o usuário pressionar uma tecla
     }
     else if (numero == 3)
     {
@@ -171,6 +175,7 @@ void unidade_tempo()
         printf("Tempo em segundos: %d\n", segundo);
         printf("Tempo em minutos: %d\n", minuto);
         printf("Tempo em horas: %d\n", horas);
+        system("pause"); // Pausa a execução até o usuário pressionar uma tecla
     }
 }
 
@@ -234,6 +239,7 @@ void converterVolume()
          unidades[unidadeOrigem],
          resultado,
          unidades[unidadeDestino]);
+         system("pause");
 }
 
 //4- Função de conversão de temperatura
@@ -306,7 +312,7 @@ int opcao, continuar;
     }
     printf("\nDeseja:\n");
     printf("1 - Voltar para o menu\n");
-    printf("2 - Sair\n");
+    printf("2 - Ir para menu principal\n");
     printf("Digite a opção: ");
     scanf("%d", &continuar);
 
@@ -411,6 +417,7 @@ void converterMassa(){
          unidades[origem],
          valor,
          unidades[destino]);
+         system("pause");
 }
 
 // 6 - Funções de Conversão de Unidade de Velocidade
@@ -489,9 +496,9 @@ void convertVelocidade(){
     }
     
     // Aciona os comandos do sistema para pausar a tela no resultado, e apagar as informações do terminal
-    //system("pause");
+    system("pause");
     printf("Pressione qualquer tecla para continuar...");
-   // system("clear || cls");
+    system("clear || cls");
   }while(op != -1);
 };
 
@@ -548,6 +555,7 @@ void converterArea() // função geral que e chamada no main
     resultado = valor * fatorOrigem / fatorDestino; //calculo do valor
 
     printf("\n%g %s é igual a %g %s\n", valor, unidades[unidadeOrigem], resultado, unidades[unidadeDestino]);
+    system("pause");
 }
 
 // 8 - Função de Conversão de Energia, W, Kw, cv
@@ -606,6 +614,7 @@ void convertEnergy(double value, int fromUnit, int toUnit) {
 
     // Exibe o resultado
     printf("Resultado: %.3f\n", result);
+    system("pause");
 }
 
 void converterEnergia() {

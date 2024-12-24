@@ -1,5 +1,9 @@
 Repositório criado para a atividade da unidade 3 do subgrupo 8 - Embarcatech.
 
+PARA EXECUTÁ-LO
+    COMANDO 1: gcc -o tarefa3 main.c funcoes.c funcoes.h
+    COMANDO 2: ./tarefa3
+
 Funcionalidades
 1. Conversão de Unidades de Comprimento
 Converte entre metro, centímetro e milímetro. O usuário escolhe as unidades de origem e destino, insere o valor, e o resultado é exibido.
