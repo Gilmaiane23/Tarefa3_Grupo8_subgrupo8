@@ -36,7 +36,9 @@ int main()
       break;
 
     case 5: // Velocidade
-
+      convertVelocidade();
+      getchar();
+      getchar();
       break;
 
     case 6: // Energia
