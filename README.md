@@ -18,7 +18,7 @@ Siga os passos abaixo para compilar e executar o programa:
   ./tarefa3
 
 
-**FUNCIONALIDADES**
+FUNCIONALIDADES
 📌1. Conversão de Unidades de Comprimento
 Converte entre metro, centímetro e milímetro. O usuário escolhe as unidades de origem e destino, insere o valor, e o resultado é exibido.
 
