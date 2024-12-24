@@ -2,7 +2,7 @@
 
 📝**CONVERSOR DE UNIDADES** 
 
-ESTE PROGRAMA É SUPER CONVERSOR DE  UNIDADES, ELE FAZ CONVERSÕES DE MEDIDAS, VOLUMES, MASSA, ETC. PARA EXECUTÁ-LO, OU SABER MAIS LEIA A DESCRIÇÃO ABAIXO 👇
+ESTE PROGRAMA É SUPER CONVERSOR DE  UNIDADES. PARA EXECUTÁ-LO, OU SABER MAIS LEIA A DESCRIÇÃO ABAIXO 👇
 
 👉 PARA EXECUTÁ-LO
 Siga os passos abaixo para compilar e executar o programa:
@@ -12,7 +12,7 @@ Siga os passos abaixo para compilar e executar o programa:
    ```bash
    gcc -o tarefa3 main.c funcoes.c funcoes.h
    
-👉2.**Execute o programa** com o comando:
+👉2.Execute o programa com o comando:
 
   ```bash
   ./tarefa3
