@@ -17,7 +17,14 @@ static void limpa_tela()
 #endif
 }
 
-//MENU//
+static int le_inteiro(const char* prompt)
+{
+    int v;
+    printf("%s", prompt);
+    scanf("%d", &v);
+    return v;
+}
+
 void menu(){
     printf("\n\n****************************************************************************************\n");
     printf("\t\t\tSuper conversor de unidades\n");
@@ -33,7 +40,6 @@ void menu(){
     printf("\t8 - Conversao de unidades de tempo.\n");
     printf("\nEscolha uma das opcoes acima: ");
 }
-//
 
 //**CONVERSÕES**/
 
@@ -114,31 +120,6 @@ void converterComprimento() {
     }
 }
 
-//2- Conversão tempo, segundo, minuto, hora
-int segundo()
-{
-    int seg;
-    printf("Digite os segundos: ");
-    scanf("%d", &seg);
-    return seg;
-}
-
-int minuto()
-{
-    int min;
-    printf("Digite os minutos: ");
-    scanf("%d", &min);
-    return min;
-}
-
-int hora()
-{
-    int hora;
-    printf("Digite as horas: ");
-    scanf("%d", &hora);
-    return hora;
-}
-
 void unidade_tempo()
 {
     int numero;
@@ -157,7 +138,7 @@ void unidade_tempo()
     {
         // Segundos
         int seg, minuto, hora;
-        seg = segundo();
+        seg = le_inteiro("Digite os segundos: ");
         minuto = seg / 60;
         hora = seg / 3600;
         printf("Tempo em segundos: %d\n", seg);
@@ -169,7 +150,7 @@ void unidade_tempo()
     {
         // Minutos
         int segundo, min, hora;
-        min = minuto();
+        min = le_inteiro("Digite os minutos: ");
         hora = min / 60;
         segundo = min * 60;
         printf("Tempo em segundos: %d\n", segundo);
@@ -181,7 +162,7 @@ void unidade_tempo()
     {
         // Horas
         int segundo, minuto, horas;
-        horas = hora();
+        horas = le_inteiro("Digite as horas: ");
         minuto = horas * 60;
         segundo = horas * 3600;
         printf("Tempo em segundos: %d\n", segundo);

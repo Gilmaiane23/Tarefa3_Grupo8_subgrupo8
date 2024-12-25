@@ -41,10 +41,5 @@ void converterArea();
 int mostrarEscolhaDaUnidade(const char *descricao);
 double fatorconversao(int unidade);
 
-
-// 8-Funções de tempo (segundo, minuto, hora)
-int segundo();
-int minuto();
-int hora();
 void unidade_tempo();
 #endif
