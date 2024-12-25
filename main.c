@@ -1,21 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funcoes.h"
-#include <locale.h>   //naoconseguiatualizaraacentuação
+#include <locale.h>
 
 int main()
 {
     int op = -1;
-    
+
     // Loop principal até o usuário optar por sair
     while (op != 0)
     {
         menu();  // Exibe o menu
         scanf("%d", &op);
         
-        // Limpeza da tela (funciona em sistemas Windows e Unix)
-        //system("clear || cls");
-
         switch (op)
         {
             case 1: // Conversão de Comprimento
@@ -64,10 +61,6 @@ int main()
                 scanf("%*c");  // Espera o usuário pressionar uma tecla
                 break;
         }
-
-        // Limpeza da tela após cada interação (funciona em sistemas Windows e Unix)
-        //system("clear || cls");
     }
-    
     return 0;
 }

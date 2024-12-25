@@ -1,11 +1,30 @@
 #include <stdio.h>
 #include "funcoes.h"
 #include <stdlib.h>
-
-
 #include <locale.h>
 
-//MENU//
+static void pause()
+{
+  system("pause"); // Pausa a execução até o usuário pressionar uma tecla
+}
+
+static void limpa_tela()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+static int le_inteiro(const char* prompt)
+{
+    int v;
+    printf("%s", prompt);
+    scanf("%d", &v);
+    return v;
+}
+
 void menu(){
     printf("\n\n****************************************************************************************\n");
     printf("\t\t\tSuper conversor de unidades\n");
@@ -21,7 +40,6 @@ void menu(){
     printf("\t8 - Conversao de unidades de tempo.\n");
     printf("\nEscolha uma das opcoes acima: ");
 }
-//
 
 //**CONVERSÕES**/
 
@@ -102,31 +120,6 @@ void converterComprimento() {
     }
 }
 
-//2- Conversão tempo, segundo, minuto, hora
-int segundo()
-{
-    int seg;
-    printf("Digite os segundos: ");
-    scanf("%d", &seg);
-    return seg;
-}
-
-int minuto()
-{
-    int min;
-    printf("Digite os minutos: ");
-    scanf("%d", &min);
-    return min;
-}
-
-int hora()
-{
-    int hora;
-    printf("Digite as horas: ");
-    scanf("%d", &hora);
-    return hora;
-}
-
 void unidade_tempo()
 {
     int numero;
@@ -145,37 +138,37 @@ void unidade_tempo()
     {
         // Segundos
         int seg, minuto, hora;
-        seg = segundo();
+        seg = le_inteiro("Digite os segundos: ");
         minuto = seg / 60;
         hora = seg / 3600;
         printf("Tempo em segundos: %d\n", seg);
         printf("Tempo em minutos: %d\n", minuto);
         printf("Tempo em horas: %.d\n", hora);
-        system("pause");
+        pause();
     }
     else if (numero == 2)
     {
         // Minutos
         int segundo, min, hora;
-        min = minuto();
+        min = le_inteiro("Digite os minutos: ");
         hora = min / 60;
         segundo = min * 60;
         printf("Tempo em segundos: %d\n", segundo);
         printf("Tempo em minutos: %d\n", min);
         printf("Tempo em horas: %.d\n", hora);
-        system("pause"); // Pausa a execução até o usuário pressionar uma tecla
+        pause();
     }
     else if (numero == 3)
     {
         // Horas
         int segundo, minuto, horas;
-        horas = hora();
+        horas = le_inteiro("Digite as horas: ");
         minuto = horas * 60;
         segundo = horas * 3600;
         printf("Tempo em segundos: %d\n", segundo);
         printf("Tempo em minutos: %d\n", minuto);
         printf("Tempo em horas: %d\n", horas);
-        system("pause"); // Pausa a execução até o usuário pressionar uma tecla
+        pause();
     }
 }
 
@@ -239,11 +232,11 @@ void converterVolume()
          unidades[unidadeOrigem],
          resultado,
          unidades[unidadeDestino]);
-         system("pause");
+         pause();
 }
 
-//4- Função de conversão de temperatura
-void converterTemperatura(){
+void converterTemperatura()
+{
 int opcao, continuar;
     float temperatura, resultado;
     while (1) {
@@ -321,8 +314,6 @@ int opcao, continuar;
             break;
         }
     }
-
-   //return 0;
 }
 
 //5  - Função de conversão de Massa, kg, tonelada...
@@ -417,28 +408,40 @@ void converterMassa(){
          unidades[origem],
          valor,
          unidades[destino]);
-         system("pause");
+         pause();
 }
 
 // 6 - Funções de Conversão de Unidade de Velocidade
-float kmh_ms(float v){
+float kmh_ms(float v)
+{
   return v / 3.6;
 }
-float kmh_mph(float v){
+
+float kmh_mph(float v)
+{
   return v * 0.62;
 }
-float ms_kmh(float v){
+
+float ms_kmh(float v)
+{
   return v * 3.6;
 }
-float ms_mph(float v){
+
+float ms_mph(float v)
+{
   return v * 2.24;
 }
-float mph_kmh(float v){
+
+float mph_kmh(float v)
+{
   return v * 1.61;
 }
-float mph_ms(float v){
+
+float mph_ms(float v)
+{
   return v * 0.45;
 }
+
 // Função principal com menu de seleção de conversão
 void convertVelocidade(){
   int op;
@@ -496,9 +499,9 @@ void convertVelocidade(){
     }
     
     // Aciona os comandos do sistema para pausar a tela no resultado, e apagar as informações do terminal
-    system("pause");
+    pause();
     printf("Pressione qualquer tecla para continuar...");
-    system("clear || cls");
+    limpa_tela();
   }while(op != -1);
 };
 
@@ -555,7 +558,7 @@ void converterArea() // função geral que e chamada no main
     resultado = valor * fatorOrigem / fatorDestino; //calculo do valor
 
     printf("\n%g %s é igual a %g %s\n", valor, unidades[unidadeOrigem], resultado, unidades[unidadeDestino]);
-    system("pause");
+    pause();
 }
 
 // 8 - Função de Conversão de Energia, W, Kw, cv
@@ -614,7 +617,7 @@ void convertEnergy(double value, int fromUnit, int toUnit) {
 
     // Exibe o resultado
     printf("Resultado: %.3f\n", result);
-    system("pause");
+    pause();
 }
 
 void converterEnergia() {
