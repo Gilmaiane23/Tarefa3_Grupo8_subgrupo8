@@ -6,7 +6,7 @@
 int main()
 {
     int op = -1;
-
+    setlocale(LC_ALL, "pt_BR.UTF-8");
     // Loop principal até o usuário optar por sair
     while (op != 0)
     {

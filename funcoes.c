@@ -29,6 +29,7 @@ void menu(){
     printf("\n\n****************************************************************************************\n");
     printf("\t\t\tSuper conversor de unidades\n");
     printf("****************************************************************************************\n\n");
+    printf("\t\t\tUse pontos para separar casas decimais\n\n");
     printf("\t0 - Para sair do programa.\n");
     printf("\t1 - Conversao de unidades de comprimento.\n");
     printf("\t2 - Conversao de unidades de massa.\n");
@@ -50,13 +51,13 @@ void converterComprimento() {
 
     while (1) {
         printf("Escolha a conversão desejada:\n");
-        printf("1 - Metro(s) para Centímetro(s)\n");
-        printf("2 - Metro(s) para Milímetro(s)\n");
-        printf("3 - Centímetro(s) para Milímetro(s)\n");
-        printf("4 - Centímetro(s) para Metro(s)\n");
-        printf("5 - Milímetro(s) para Metro(s)\n");
-        printf("6 - Milímetro(s) para Centímetro(s)\n");
-        printf("Digite a opção: ");
+        printf("1 - Metro(s) para Centimetro(s)\n");
+        printf("2 - Metro(s) para Milimetro(s)\n");
+        printf("3 - Centimetro(s) para Milimetro(s)\n");
+        printf("4 - Centimetro(s) para Metro(s)\n");
+        printf("5 - Milimetro(s) para Metro(s)\n");
+        printf("6 - Milimetro(s) para Centimetro(s)\n");
+        printf("Digite a opcao: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
@@ -64,46 +65,46 @@ void converterComprimento() {
                 printf("Digite o comprimento em Metro(s): ");
                 scanf("%f", &comprimento);
                 resultado = comprimento * 100;
-                printf("%.2f Metro(s) equivalem a %.2f Centímetro(s).\n", comprimento, resultado);
+                printf("%.2f Metro(s) equivalem a %.2f Centimetro(s).\n", comprimento, resultado);
                 break;
 
             case 2:
                 printf("Digite o comprimento em Metro(s): ");
                 scanf("%f", &comprimento);
                 resultado = comprimento * 1000;
-                printf("%.2f Metro(s) equivalem a %.2f Milímetro(s).\n", comprimento, resultado);
+                printf("%.2f Metro(s) equivalem a %.2f Milimetro(s).\n", comprimento, resultado);
                 break;
 
             case 3:
-                printf("Digite o comprimento em Centímetro(s): ");
+                printf("Digite o comprimento em Centimetro(s): ");
                 scanf("%f", &comprimento);
                 resultado = comprimento * 10;
-                printf("%.2f Centímetro(s) equivalem a %.2f Milímetro(s).\n", comprimento, resultado);
+                printf("%.2f Centimetro(s) equivalem a %.2f Milimetro(s).\n", comprimento, resultado);
                 break;
 
             case 4:
-                printf("Digite o comprimento em Centímetro(s): ");
+                printf("Digite o comprimento em Centimetro(s): ");
                 scanf("%f", &comprimento);
                 resultado = comprimento / 100;
-                printf("%.2f Centímetro(s) equivalem a %.2f Metro(s).\n", comprimento, resultado);
+                printf("%.2f Centimetro(s) equivalem a %.2f Metro(s).\n", comprimento, resultado);
                 break;
 
             case 5:
-                printf("Digite o comprimento em Milímetro(s): ");
+                printf("Digite o comprimento em Milimetro(s): ");
                 scanf("%f", &comprimento);
                 resultado = comprimento / 1000;
-                printf("%.2f Milímetro(s) equivalem a %.2f Metro(s).\n", comprimento, resultado);
+                printf("%.2f Milimetro(s) equivalem a %.2f Metro(s).\n", comprimento, resultado);
                 break;
 
             case 6:
-                printf("Digite o comprimento em Milímetro(s): ");
+                printf("Digite o comprimento em Milimetro(s): ");
                 scanf("%f", &comprimento);
                 resultado = comprimento / 10;
-                printf("%.2f Milímetro(s) equivalem a %.2f Centímetro(s).\n", comprimento, resultado);
+                printf("%.2f Milimetro(s) equivalem a %.2f Centimetro(s).\n", comprimento, resultado);
                 break;
 
             default:
-                printf("Opção inválida!\n");
+                printf("Opção invalida!\n");
                 continue;
         }
 
